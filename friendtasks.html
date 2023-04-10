@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    My Friends' tasks
+{% endblock %}
+
+{% block main %}
+
+    <table class="table table-striped">
+        <tr>
+            <th></th>
+            <th>Task</th>
+            <th>Description</th>
+            <th>Day</th>
+            <th>Time</th>
+
+        </tr>
+        {% for task in tasks %}
+
+                <tr>
+                    <td> {{ task.username }}</td>
+                    <td> {{ task.name }}</td>
+                    <td> {{ task.description }}</td>
+                    <td> {{ task.day }}</td>
+                    <td> {{ task.time }}</td>
+                    <td> {{ task.status }}</td>
+
+
+
+
+                </tr>
+
+        {% endfor %}
+
+    </table>
+
+{% endblock %}
