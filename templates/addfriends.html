@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    f   Friends
+{% endblock %}
+
+{% block main %}
+
+
+        <form action="/addfriends" method="post">
+            <ul class="list-group">
+            {% for friend in friends %}
+            <li class="list-group-item">{{friend.username}}
+            <button onChange="this.form.submit()" class="btn btn-success" type="submit" id="check1" name="option2" value="{{friend.username}}">Add friend</button>
+            </li>
+            {% endfor %}
+            </ul>
+            </div>
+        </form>
+
+
+
+
+
+{% endblock %}

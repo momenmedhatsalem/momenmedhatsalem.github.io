@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Completed Tasks
+{% endblock %}
+
+{% block main %}
+
+
+    <h3>Completed Tasks</h3>
+    <table class="table table-striped table-hover" action="/tasks" method="get">
+        <tr>
+
+            <th>Task</th>
+            <th>Description</th>
+            <th>Day</th>
+            <th>Time</th>
+            <th>Total</th>
+
+        </tr>
+        {% for c_task in c_tasks %}
+        <tr>
+
+            <td> {{ c_task.name }}</td>
+            <td> {{ c_task.description }}</td>
+            <td> {{ c_task.day }}</td>
+            <td> {{ c_task.time }}</td>
+
+        </tr>
+        {% endfor %}
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>{{num}}</td>
+        </tr>
+    </table>
+{% endblock %}

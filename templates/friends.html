@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    f   Friends
+{% endblock %}
+
+{% block main %}
+    <div class="container-lg" action="/friends" method="get">
+        <h3>My friends</h3>
+        <ul>
+        {% for friend in friends %}
+
+        <li class="list-group-item">{{friend.friends}}</li>
+
+        {% endfor %}
+        </ul>
+        <h3><a href="/friendtasks">Check your friends' tasks</a></h3>
+    </div>
+        <div class="container-md">
+            <br>
+            <h5>Add Friends</h5>
+            <br>
+        <form action="/addfriends" method="post">
+            <input autocomplete="off" autofocus placedholder="Look Up Friends" name="search" type="search">
+            <button type="search">Search</button>
+        </form>
+        <br>
+        <br>
+
+    </div>
+
+
+
+
+{% endblock %}

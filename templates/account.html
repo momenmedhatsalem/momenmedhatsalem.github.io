@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Account
+{% endblock %}
+
+{% block main %}
+    <div>
+        <h5>User name : {{ name }}</h5>
+        <h5><a href="/password">Change Password</a></h5>
+        <form action="/account" method="post">
+            <h5 style=";">Allow your friends to see your tasks</h5>
+            <h5 style="display: inline-block">On</h5>
+            <div style=" padding-left: 60px; display: inline-block; margin: auto; width: 0%;;" class="form-check form-switch">
+
+                <input onChange="this.form.submit()" name="option4" value="1" class="form-check-input" style="text-align:right" type="checkbox" id="flexSwitchCheckChecked" checked>
+                <label class="form-check-label"  for="flexSwitchCheckChecked"></label>
+
+            </div>
+        </form>
+        <form action="/account" method="post">
+            <h5 style="display: inline-block">Off</h5>
+            <div style=" padding-left: 60px; display: inline-block; margin: auto; width: 0%;;" class="form-check form-switch">
+
+                <button formaction="/account2" onChange="this.form.submit()" name="option5" value="0" class="form-check-input" style="text-align:right" type="checkbox" id="flexSwitchCheckChecked" checked></button>
+                <label class="form-check-label"  for="flexSwitchCheckChecked"></label>
+
+            </div>
+        </form>
+    </div>
+{% endblock %}
